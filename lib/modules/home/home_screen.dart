@@ -102,11 +102,11 @@ class HomeScreen extends StatelessWidget {
                 Obx(() {
                   final filteredNews = c.filteredNews;
 
-                  if (c.isloading) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  }
+                  // if (c.isloading) {
+                  //   return const Center(
+                  //     child: CircularProgressIndicator(),
+                  //   );
+                  // }
 
                   if (filteredNews.isEmpty) {
                     return const Center(

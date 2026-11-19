@@ -83,7 +83,10 @@ class HomeController extends GetxController {
     try {
       isloading = true;
       update();
-      final response = await supabase.from('news').select();
+      final response = await supabase
+          .from('news')
+          .select()
+          .order('created_at', ascending: false);
 
       news = response.map((item) {
         return NewsItem(
@@ -96,7 +99,6 @@ class HomeController extends GetxController {
           news: item['news'] ?? '',
         );
       }).toList();
-      print(news);
       update();
     } catch (e) {
       print('Error fetching news: $e');
